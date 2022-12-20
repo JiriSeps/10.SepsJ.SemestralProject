@@ -14,35 +14,23 @@ import java.util.Scanner;
  * @version 1.0 17/12/2022
  */
 public class Semestral {
-    
+    static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        //in
+        // in
         System.out.println("Zadej cislo: ");
         long num = sc.nextLong();
-        
+
         while (num > 0) {
-        // Count the number of occurrences of each digit
-        int[] counts = countDigits(num);
+            // Count the number of occurrences of each digit
+            int[] counts = Tools.countDigits(num);
 
-        // Print the count and digit for each non-zero count
-        String result = "";
-        for (int i = 0; i < counts.length; i++) {
-            if (counts[i] > 0) {
-            result += counts[i] + "" + i;
-            }
-        }
+            // Print the count and digit for each non-zero count
+            String result = Tools.toString(counts);
+            // Compare the input number and result
+            Tools.compare(num, result);
 
-        // Compare the input number and result
-        System.out.println("Cislo "+num+" ma soupisku "+result);
-        if (result.equals(String.valueOf(num))) {
-            System.out.println("Cislo"+num+" je zapisem sve soupisky");
-        } else {
-            System.out.println("Cislo "+num+" neni zapisem sve soupisky");
-        }
-
-        System.out.print("Zadej cislo: ");
-        num = sc.nextLong();
+            System.out.print("Zadej cislo: ");
+            num = sc.nextLong();
         }
     }
 }
