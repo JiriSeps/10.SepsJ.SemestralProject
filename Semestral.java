@@ -45,16 +45,4 @@ public class Semestral {
         num = sc.nextLong();
         }
     }
-
-    public static int[] countDigits(long num) {
-        int[] counts = new int[10]; // array creation for digit storage
-        
-        while (num > 0) {
-        int digit = (int) (num % 10);
-        counts[digit]++;
-        num /= 10;
-        }
-
-        return counts;
-    }
 }
