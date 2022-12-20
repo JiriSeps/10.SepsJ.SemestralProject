@@ -42,7 +42,7 @@ public class Semestral {
         }
 
         System.out.print("Zadej cislo: ");
-        num = sc.nextInt();
+        num = sc.nextLong();
         }
     }
 
